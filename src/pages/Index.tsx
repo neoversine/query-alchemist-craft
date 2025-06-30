@@ -8,7 +8,6 @@ import { useToast } from "@/hooks/use-toast";
 import { SearchResult } from "@/components/SearchResult";
 import { FeatureCard } from "@/components/FeatureCard";
 import { CTASection } from "@/components/CTASection";
-import { Particles } from "@/components/Particles";
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -71,165 +70,166 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      <Particles />
-      
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-90"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-full blur-3xl"></div>
-
-      {/* Main Content - Centered Card */}
-      <div className="center-card">
-        <div className="gradient-gold-border">
-          <div className="gradient-gold-content glass-card p-8 md:p-12">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-8">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-gold rounded-xl flex items-center justify-center gold-glow">
-                  <Zap className="w-7 h-7 text-black" />
-                </div>
-                <span className="text-3xl font-bold font-space text-gold-400 neon-text-gold">barGo.ai</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse-slow"></div>
+        
+        <div className="container mx-auto px-4 py-16 relative">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-16">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
               </div>
-              
-              <Button 
-                variant="outline" 
-                className="glass-button border-red-orange-500 text-gold-400 hover:bg-gold-500/20 transition-all duration-300"
-                onClick={() => window.open('https://neoversine.com', '_blank')}
-              >
-                by Neoversine
-              </Button>
+              <span className="text-2xl font-bold font-space">barGo.ai</span>
             </div>
+            
+            <Button 
+              variant="outline" 
+              className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-all duration-300"
+              onClick={() => window.open('https://neoversine.com', '_blank')}
+            >
+              by Neoversine
+            </Button>
+          </div>
 
-            {/* Main Hero */}
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center px-6 py-3 glass-card rounded-full border border-red-orange-500/30 mb-8">
-                <Sparkles className="w-5 h-5 text-gold-400 mr-3" />
-                <span className="text-gold-300">Transform Lazy Searches → Expert Queries</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gold-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent animate-fade-in neon-text-gold">
-                Stop Googling Like
-                <br />
-                <span className="text-red-orange-400">an Amateur</span>
-              </h1>
-              
-              <p className="text-xl text-gold-200 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Enter your lazy search. Get 3 expert-level Google queries with advanced operators. 
-                <span className="text-gold-400 font-semibold"> Copy, paste, dominate.</span>
-              </p>
+          {/* Main Hero */}
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20 mb-6">
+              <Sparkles className="w-4 h-4 text-blue-400 mr-2" />
+              <span className="text-sm text-blue-300">Transform Lazy Searches → Expert Queries</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent animate-fade-in">
+              Stop Googling Like
+              <br />
+              <span className="neon-text text-blue-400">an Amateur</span>
+            </h1>
+            
+            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Enter your lazy search. Get 3 expert-level Google queries with advanced operators. 
+              <span className="text-blue-400 font-semibold"> Copy, paste, dominate.</span>
+            </p>
 
-              {/* Search Interface */}
-              <div className="glass-card p-6 mb-6 border border-red-orange-500/30">
+            {/* Search Interface */}
+            <div className="gradient-border max-w-2xl mx-auto mb-8">
+              <div className="gradient-border-content p-6">
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex-1 relative">
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gold-400 w-6 h-6" />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <Input
                       placeholder="e.g., how to hack netflix, best ai resume tools..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="glass-input pl-12 h-16 text-lg text-gold-100 placeholder:text-gold-400/60 focus:border-gold-400 transition-all duration-300"
+                      className="pl-10 h-14 text-lg bg-slate-800/50 border-slate-700 focus:border-blue-500 transition-all duration-300"
                       onKeyPress={(e) => e.key === 'Enter' && generateQueries()}
                     />
                   </div>
                   <Button
                     onClick={generateQueries}
                     disabled={isLoading}
-                    className="glass-button h-16 px-8 bg-gradient-gold hover:bg-gradient-to-r hover:from-gold-500 hover:to-red-orange-500 text-black font-bold transition-all duration-300 gold-glow"
+                    className="h-14 px-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold transition-all duration-300 cyber-glow"
                   >
                     {isLoading ? (
                       <div className="flex items-center">
-                        <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-black mr-3"></div>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
                         Optimizing...
                       </div>
                     ) : (
                       <>
-                        <Zap className="w-6 h-6 mr-3" />
+                        <Zap className="w-5 h-5 mr-2" />
                         Optimize Search
                       </>
                     )}
                   </Button>
                 </div>
               </div>
-
-              <p className="text-sm text-gold-400/80">
-                ⚡ Powered by advanced AI • Used by 10,000+ smart searchers
-              </p>
             </div>
 
-            {/* Results Section */}
-            {results.length > 0 && (
-              <div className="animate-slide-up">
-                <h2 className="text-2xl font-bold text-center mb-6 text-gold-300">
-                  🔥 Your Optimized Search Queries
-                </h2>
-                <div className="grid gap-4 max-h-96 overflow-y-auto">
-                  {results.map((result, index) => (
-                    <SearchResult
-                      key={index}
-                      result={result}
-                      onCopy={copyToClipboard}
-                      index={index}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
+            <p className="text-sm text-gray-400">
+              ⚡ Powered by advanced AI • Used by 10,000+ smart searchers
+            </p>
+          </div>
 
-            {/* Mini Features */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
-              <div className="glass-card p-6 text-center border border-red-orange-500/20">
-                <Target className="w-8 h-8 text-gold-400 mx-auto mb-3" />
-                <h4 className="font-semibold text-gold-300 mb-2">Laser-Focused</h4>
-                <p className="text-sm text-gold-400/80">Advanced operators cut through noise</p>
-              </div>
-              <div className="glass-card p-6 text-center border border-red-orange-500/20">
-                <Zap className="w-8 h-8 text-gold-400 mx-auto mb-3" />
-                <h4 className="font-semibold text-gold-300 mb-2">Instant AI</h4>
-                <p className="text-sm text-gold-400/80">Transform queries in seconds</p>
-              </div>
-              <div className="glass-card p-6 text-center border border-red-orange-500/20">
-                <Rocket className="w-8 h-8 text-gold-400 mx-auto mb-3" />
-                <h4 className="font-semibold text-gold-300 mb-2">10x Research</h4>
-                <p className="text-sm text-gold-400/80">Find hidden gems others miss</p>
+          {/* Results Section */}
+          {results.length > 0 && (
+            <div className="max-w-4xl mx-auto mb-16 animate-slide-up">
+              <h2 className="text-2xl font-bold text-center mb-8 text-blue-300">
+                🔥 Your Optimized Search Queries
+              </h2>
+              <div className="grid gap-6">
+                {results.map((result, index) => (
+                  <SearchResult
+                    key={index}
+                    result={result}
+                    onCopy={copyToClipboard}
+                    index={index}
+                  />
+                ))}
               </div>
             </div>
+          )}
+        </div>
+      </div>
 
-            {/* CTA */}
-            <div className="mt-12 text-center">
-              <div className="glass-card p-8 border border-gold-500/30">
-                <h3 className="text-2xl font-bold text-gold-300 mb-4">Want Your Own AI Tool?</h3>
-                <p className="text-gold-400/90 mb-6">
-                  <span className="text-gold-400 font-semibold">Neoversine</span> builds custom AI automations that save 10+ hours/week
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    onClick={() => window.open('https://neoversine.com/contact', '_blank')}
-                    className="glass-button bg-gradient-gold hover:bg-gradient-to-r hover:from-gold-500 hover:to-red-orange-500 text-black font-bold px-8 py-3 gold-glow"
-                  >
-                    Get Your AI Tool Built
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="glass-button border-gold-500 text-gold-400 hover:bg-gold-500/20 px-8 py-3"
-                    onClick={() => window.open('https://calendly.com/neoversine', '_blank')}
-                  >
-                    Book Strategy Call
-                  </Button>
-                </div>
-              </div>
-            </div>
+      {/* Features Section */}
+      <div className="py-24 bg-slate-900/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Search Like Everyone Else?</h2>
+            <p className="text-xl text-gray-400">Join the smart searchers who get better results in less time</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <FeatureCard
+              icon={Target}
+              title="Laser-Focused Results"
+              description="Advanced operators like site:, filetype:, and intitle: cut through the noise"
+            />
+            <FeatureCard
+              icon={Zap}
+              title="Instant Optimization"
+              description="AI transforms your lazy queries into expert searches in seconds"
+            />
+            <FeatureCard
+              icon={Rocket}
+              title="10x Your Research"
+              description="Find hidden gems, PDFs, and expert discussions others miss"
+            />
           </div>
         </div>
       </div>
 
+      {/* CTA Sections */}
+      <CTASection />
+
       {/* Footer */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center z-10">
-        <p className="text-gold-400/60 text-sm">
-          Built by <span className="text-gold-400 font-semibold">Neoversine</span> - AI Automation Agency
-        </p>
-      </div>
+      <footer className="bg-slate-900 py-12 border-t border-slate-800">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <Zap className="w-4 h-4 text-white" />
+              </div>
+              <span className="text-lg font-bold font-space">barGo.ai</span>
+            </div>
+            
+            <div className="text-center md:text-right">
+              <p className="text-gray-400 mb-2">
+                Built by <span className="text-blue-400 font-semibold">Neoversine</span> - AI Automation Agency
+              </p>
+              <Button 
+                variant="link" 
+                className="text-blue-400 hover:text-blue-300 p-0"
+                onClick={() => window.open('https://neoversine.com', '_blank')}
+              >
+                Get Your Own AI Tool Built <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
