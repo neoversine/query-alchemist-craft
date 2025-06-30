@@ -20,29 +20,29 @@ export const SearchResult = ({ result, onCopy, index }: SearchResultProps) => {
   };
 
   return (
-    <Card className="bg-slate-800/50 border-slate-700 hover:border-blue-500/50 transition-all duration-300 animate-slide-up" 
+    <div className="glass-card border border-red-orange-500/30 hover:border-gold-500/50 transition-all duration-300 animate-slide-up" 
           style={{ animationDelay: `${index * 0.1}s` }}>
       <CardContent className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <div className="flex items-center mb-2">
-              <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">
+            <div className="flex items-center mb-3">
+              <span className="px-3 py-1 glass-card border border-gold-500/30 text-gold-300 text-xs rounded-full">
                 {result.category}
               </span>
             </div>
-            <code className="block p-4 bg-slate-900 border border-slate-700 rounded-lg text-sm text-green-400 font-mono mb-3 overflow-x-auto">
+            <code className="block p-4 glass-card border border-red-orange-500/20 rounded-lg text-sm text-gold-300 font-mono mb-3 overflow-x-auto">
               {result.query}
             </code>
-            <p className="text-gray-300 text-sm">{result.explanation}</p>
+            <p className="text-gold-400/80 text-sm">{result.explanation}</p>
           </div>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-2">
+        <div className="flex flex-col sm:flex-row gap-3">
           <Button
             onClick={() => onCopy(result.query)}
             variant="outline"
             size="sm"
-            className="flex-1 border-blue-500/50 text-blue-300 hover:bg-blue-500/20"
+            className="flex-1 glass-button border-gold-500/50 text-gold-300 hover:bg-gold-500/20"
           >
             <Copy className="w-4 h-4 mr-2" />
             Copy Query
@@ -50,13 +50,13 @@ export const SearchResult = ({ result, onCopy, index }: SearchResultProps) => {
           <Button
             onClick={openInGoogle}
             size="sm"
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+            className="flex-1 glass-button bg-gradient-gold hover:bg-gradient-to-r hover:from-gold-500 hover:to-red-orange-500 text-black font-semibold"
           >
             <ExternalLink className="w-4 h-4 mr-2" />
             Search Google
           </Button>
         </div>
       </CardContent>
-    </Card>
+    </div>
   );
 };
